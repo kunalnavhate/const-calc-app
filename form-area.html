@@ -1,0 +1,30 @@
+<div class="form-group">
+	<label for="carpetArea">Desired Carpet Area</label>
+	<input type="number" class="form-control" name="carpetArea" ng-model="formData.carpetArea" >
+	<div ng-show="formData.carpetArea > 3000" class="alert alert-info top-buffer" role="alert">
+		Normally this value is computed by substracting non-slab area
+	</div>
+</div>
+<div class="form-group">
+	<label for="LoadFactor">Load Factor</label>
+	<input type="number" class="form-control" name="LoadFactor" ng-model="formData.LoadFactor">
+	<div class="row"></div>
+	<div ng-show="formData.LoadFactor > 5" class="alert alert-info" role="alert">
+		This value should not exceed 5.0
+	</div>
+</div>
+<div class="form-group">
+	<label for="construction-cost">Construction cost / Sq Ft</label>
+	<input type="number" class="form-control" name="construction-cost" ng-model="formData.constructionCost">
+	<div class="row"></div>
+	<div ng-show="formData.constructionCost > 5000" class="alert alert-info" role="alert">
+		In your city this cost should not be greater than 5000*
+	</div>
+</div>
+<div class="form-group row">
+	<div class="col-xs-6 col-xs-offset-3">
+		<a ui-sref="form.constructionCost" class="btn btn-block btn-info" ng-click="processCalculations()">
+			Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+		</a>
+	</div>
+</div>
